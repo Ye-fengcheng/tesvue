@@ -1,0 +1,6 @@
+zte-crm-epmsui-dev:
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  image: apphub.zte.com.cn/crm/epms/zte-crm-epmsui:$$zte-crm-epmsui-dev_v$$
+  stdin_open: true

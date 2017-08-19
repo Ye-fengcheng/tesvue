@@ -1,0 +1,16 @@
+#
+From docker.zte.com.cn:5000/10208074/flume-centos6.8_tomcat7.0:v1.1
+
+#日志收集相关的配置文件
+COPY ./flume/flume-config/* /etc/flume/conf.d/
+COPY ./flume/hosts /root/hosts
+
+#复制ui的应用到tomcat中
+COPY ./dist /usr/local/tomcat/webapps/ROOT/
+
+#改成服务的端口，tomcat端口
+EXPOSE 8080
+
+COPY ./run.sh /root/
+RUN chmod 755 /root/run.sh
+CMD ["/root/run.sh"]

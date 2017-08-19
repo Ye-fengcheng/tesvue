@@ -1,0 +1,34 @@
+{
+    "config": {
+        "jarVersion": "v1.0.0",
+		"imageVersion": "1.0",
+        "msArea": "crm",
+		"msSystem": "epms",
+        "pubDir": "epms/scopemanagement_dev",
+        "msName": "zte-crm-epmsui",
+        "pomSubFilePath": "",
+		"appStackName": "ZTE-CRM-EPMS",
+		"buildDockerName": "docker.zte.com.cn:5000/epms/spring-boot:latest",
+		"prjAfUrl": "http://sz.artifactory.zte.com.cn/artifactory/crm-snapshot-generic",
+		"prjAfAccount": "crm-ci-epms",
+		"prjAfPwd": "crm-ci-epms_123456"
+    },
+	"artifactors": [
+        {
+            "msname": "zte-crm-epmsui-dev",
+            "version": "",
+			"gitUrl":"ssh://10205616@gerrit.zte.com.cn:29418/ZXCRM/EPMS100/zte-crm-epmsscopemanagement-deliveryconfig",
+			"branchName":"develop",
+			"testType":"UI",
+			"relativeTargetDir":"zte-crm-epmsscopemanagement-deliveryconfig",
+			"environments":"jdbc3.password=ebNYVgwO5RhPVFjpqlSFDQ==,jdbc3.url=jdbc:mysql://10.5.16.109:3306/EPMS?useUnicode=true&amp;characterEncoding=UTF-8&allowMultiQueries=true,jdbc3.username=eS/DNI9ErRaaLL32RcobmA==",
+			"pomSubPath":"",
+            "artifactor": [
+            {
+                    "pattern": "/ver.txt",
+                    "target": "crm-snapshot-generic/epms/scopemanagement_dev"
+                }
+            ]
+        }
+    ]
+}
